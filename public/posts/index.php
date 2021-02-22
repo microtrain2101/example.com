@@ -1,5 +1,9 @@
 <?php
 include '../../core/db_connect.php';
+//Build the page metadata
+$meta = [];
+$meta['description'] = "MicroTrain2101 Posts";
+$meta['keywords'] = "posts, MicroTrain2101, post";
 
 $content=null;
 $stmt = $pdo->query("SELECT * FROM posts");

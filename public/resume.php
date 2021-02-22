@@ -1,5 +1,11 @@
 <?php
 
+//Build the page metadata
+$meta = [];
+$meta['description'] = "Resume MicroTrain2101 For Web Development";
+$meta['keywords'] = "resume, MicroTrain2101, Web development, web development";
+
+
 $content = <<<EOT
         <main>
           <section class="intro">
