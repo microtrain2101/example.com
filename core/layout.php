@@ -1,9 +1,20 @@
+<!-- Set session in php -->
+<?php
+function active($name){
+  $current = $_SERVER['REQUEST_URI'];
+  if($current === $name){
+    return 'active';
+  }
+
+  return null;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
 <!-- Add sanitized content -->
-<?php if(!empty($meta)): ?>
+  <?php if(!empty($meta)): ?>
 
 <?php if(!empty($meta['title'])): ?>
   <title><?php echo $meta['title']; ?></title>
@@ -19,7 +30,6 @@
 
 <?php endif; ?>
 <!-- End sanitized content -->
-
     <meta charset="UTF-8">
     <title>Hello, I am MicroTrain2101</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,6 +52,17 @@
           <li><a href="contact.php">Contact</a></li>
           <li><a href="/users/">Users</a></li>
           <li><a href="/posts/">Posts</a></li>
+          <li class="nav-item">
+              <a class="nav-link" href="logout.php">Logout</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="login.php">Login</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="register.php">Register</a>
+          </li>
         </ul>
       </nav>
 </header>

@@ -1,4 +1,5 @@
 <?php
+require '../core/bootstrap.php';
 
 //Build the page metadata
 $meta = [];

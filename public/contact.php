@@ -1,6 +1,10 @@
 <?php
 
 require '../core/processContactForm.php';
+// require '../core/session.php';
+// require '../core/bootstrap.php';
+
+// checkSession();
 
 //Build the page metadata
 $meta = [];
@@ -9,7 +13,6 @@ $meta['keywords'] = "contact, MicroTrain2101, Web development, web development";
 
 $content = <<<EOT
 <form action="contact.php" method="POST">
-    {$message}
     <input type="hidden" name="subject" value="New submission!">
   
   <div class="form-control">

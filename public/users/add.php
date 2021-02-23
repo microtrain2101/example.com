@@ -1,6 +1,8 @@
 <?php
 require '../../core/functions.php';
 require '../../core/db_connect.php';
+require '../../core/session.php';
+checkSession();
 
 $message=null;
 
