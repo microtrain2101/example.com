@@ -14,7 +14,7 @@ $stmt = $pdo->query("SELECT * FROM posts");
 while ($row = $stmt->fetch())
 {
 
-    $content .= "<a href=\"view.php?slug={$row['slug']}\">{$row['title']}</a>";
+    $content .= "<div><a href=\"view.php?slug={$row['slug']}\">{$row['title']}"."</a></div>";
 }
 
 $content .= <<<EOT

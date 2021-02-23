@@ -2,18 +2,27 @@
 require '../core/bootstrap.php';
 // 1. Connect to the database
 require '../core/db_connect.php';
+// Lab 1 - Pass user inputs as arguments
+require '../core/functions.php';
+
+// Lab 1 - Pass user inputs as arguments
+$args = [
+    'email'=>FILTER_SANITIZE_EMAIL,
+    'password'=>FILTER_UNSAFE_RAW,
+  ];
+$input = filter_input_array(INPUT_POST, $args);  
 
 // 2. Filter the user inputs
-$input = filter_input_array(INPUT_POST,[
-    'email'=>FILTER_SANITIZE_EMAIL,
-    'password'=>FILTER_UNSAFE_RAW
-]);
+// $input = filter_input_array(INPUT_POST,[
+//     'email'=>FILTER_SANITIZE_EMAIL,
+//     'password'=>FILTER_UNSAFE_RAW
+// ]);
 
 // 3. Check for a POST request
 if(!empty($input)){
 
     // 4. Query the database for the requested user
-    $input = array_map('trim', $input);
+    // $input = array_map('trim', $input);
     $sql='SELECT id, hash FROM users WHERE email=:email';
     $stmt=$pdo->prepare($sql);
     $stmt->execute([
@@ -29,15 +38,23 @@ if(!empty($input)){
             $_SESSION['user'] = [];
             $_SESSION['user']['id']=$row['id'];
 
+            $args = [
+                'goto'=>FILTER_SANITIZE_STRING,
+              ];
+          
             // 6.2 Redirect the user
-            header('LOCATION: ' . $_POST['goto']);
-        }
+            // header('LOCATION: ' . $_POST['goto']);
+            $get = filter_input_array(INPUT_GET, $args);
+            $goto = !empty($get['goto'])?$get['goto']:'../public';
+            header('LOCATION: ' . $goto);        }
     }
 }
+
+//Build the page metadata
 $meta=[];
 $meta['title']="Login";
 
-$content=<<<EOT
+$content = <<<EOT
 <!-- 3 Add page title -->
 <h1>{$meta['title']}</h1>
 
@@ -67,7 +84,6 @@ $content=<<<EOT
         >
     </div>
 
-    // <input name="goto" value="{$goto}" type="hidden">
     <input type="submit" class="btn btn-primary">
 
 </form>

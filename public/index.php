@@ -10,7 +10,7 @@ $meta['keywords'] = "Welcome, MicroTrain2101, development, web development";
 $content = <<<EOT
 <main>                
     <h1>Hello, I am MicroTrain2101</h1>
-    <img src="https://www.gravatar.com/avatar/4678a33bf44c38e54a58745033b4d5c6?d=mm&s=64" alt="Microtrain2101 Avatar">
+    <img class="rounded-circle" src="https://www.gravatar.com/avatar/4678a33bf44c38e54a58745033b4d5c6?d=mm&s=64" alt="Microtrain2101 Avatar">
     <p>Welcome to my web page. Microtrain Bootcamp page for class. Learn HTML, CSS, Bootstrap and other toolkits. Web and Hybrid Mobile development.</p>
     <h2>HTML Elements</h2>
     <p>

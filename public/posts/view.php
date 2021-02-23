@@ -1,7 +1,7 @@
 <?php
 include '../../core/db_connect.php';
 require '../../core/session.php';
-checkSession();
+// checkSession();
 
 $input = filter_input_array(INPUT_GET);
 $slug = preg_replace("/[^a-z0-9-]+/", "", $input['slug']);
