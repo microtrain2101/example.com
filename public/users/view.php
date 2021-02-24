@@ -30,6 +30,6 @@ $content= <<<EOT
 <a class="btn btn-link" href="delete.php?id={$row['id']}">Delete</a>
 </div>
 EOT;
-echo $content;
+// echo $content;
 
-// include '../../core/layout.php';
+include '../../core/layout.php';
