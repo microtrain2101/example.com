@@ -85,6 +85,7 @@ $content = <<<EOT
     </div>
 
     <input type="submit" class="btn btn-primary">
+    <a class="btn btn-link" href="./password-recovery/enter_email.php">Forgot Password</a>
 
 </form>
 EOT;
